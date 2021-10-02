@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+<body class="home">
+    
+
+    {% include 'admin_nav.html' %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col md-12">
+            
+                        <div class="jumbotron p-3">
+            
+                            <h2>Manage <b>User </b>  <button type="button"  class="btn btn-primary float-right"
+                            data-toggle="modal" data-target="#mymodal">Add New User</button> </h2>
+            
+            
+                            {% with messages = get_flashed_messages() %}
+            
+                            {% if messages %}
+            
+                            {% for message in messages %}
+            
+                            <div class="alert alert-success alert-dismissable" role="alert">
+            
+                                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            
+                                    <span aria-hidden="true">x</span>
+            
+                                </button>
+            
+            
+                            {{message}}
+            
+            
+                            </div>
+            
+            
+                            {% endfor %}
+            
+                            {% endif %}
+                            {% endwith %}
+            
+            
+                            <table class="table table-hover table-dark">
+            
+                                <tr>
+            
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Plan</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Action</th>
+            
+                                </tr>
+            
+
+                            
+                                <tr>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+
+            
+                                    <td>
+                                        <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="">Edit</a>
+                                        <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="">Upgrade</a>
+                                        <a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+            
+                                    </td>
+            
+                                </tr>
+            
+                               
+            
+            
+                            </table>
+            
+            
+                        </div>
+            
+            
+            
+                              <!-- Modal Add User-->
+            
+            
+            <div id="mymodal" class="modal fade" role="dialog">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+            
+                        <h4 class="modal-title">Add User</h4>
+                     </div>
+                     <div class="modal-body">
+            
+                        <form action="" method="POST">
+            
+            
+                           <div class="form-group">
+            
+                              <label>Name:</label>
+                              <input type="text" class="form-control" name="name" required="1">
+            
+            
+                           </div>
+            
+            
+                            <div class="form-group">
+            
+            
+                              <label>Email:</label>
+                              <input type="email" class="form-control" name="email" required="1">
+            
+            
+                           </div>
+            
+            
+                            <div class="form-group">
+            
+            
+                              <label>Phone:</label>
+                              <input type="number" class="form-control" name="phone" required="1">
+            
+            
+                           </div>
+            
+            
+                           <div class="form-group">
+            
+            
+                            <label>Address:</label>
+                            <input type="text" class="form-control" name="address" required="1">
+            
+            
+                         </div>
+            
+            
+                           <div class="form-group">
+            
+            
+                              <button class="btn btn-primary" type="submit">Add Employee</button>
+            
+            
+                           </div>
+            
+            
+                        </form>
+            
+            
+                     </div>
+            
+            
+                     <div class="modal-footer">
+            
+            
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+            
+                     </div>
+            
+            
+                  </div>
+            
+            
+               </div>
+            
+            
+            </div>
+        
+            
+            
+                    </div>
+            
+                </div>
+             
+
+                <!-- ADD HERE -- CARDS   -->
+
+
+
+                <div class="container">
+                    <div class="row">
+                    <div class="col-md-3">
+                      <div class="card-counter primary">
+                        <i class="fa fa-code-fork"></i>
+                        <span class="count-numbers">12</span>
+                        <span class="count-name">Users</span>
+                      </div>
+                    </div>
+                
+                    <div class="col-md-3">
+                      <div class="card-counter danger">
+                        <i class="fa fa-ticket"></i>
+                        <span class="count-numbers">599</span>
+                        <span class="count-name">Instances</span>
+                      </div>
+                    </div>
+                
+                    <div class="col-md-3">
+                      <div class="card-counter success">
+                        <i class="fa fa-database"></i>
+                        <span class="count-numbers">6875</span>
+                        <span class="count-name">Data</span>
+                      </div>
+                    </div>
+                
+                    <div class="col-md-3">
+                      <div class="card-counter info">
+                        <i class="fa fa-users"></i>
+                        <span class="count-numbers">35</span>
+                        <span class="count-name">Users</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
+            
+            </div>
+            
+
+        </div>
+
+        
+
+    </div>  
+
+
+</body>
+
+
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
+
